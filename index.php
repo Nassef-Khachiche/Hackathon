@@ -8,6 +8,6 @@
     <title>Home</title>
 </head>
 <body>
-    
+    <?php require 'inc/nav.php'; ?>
 </body>
 </html>
