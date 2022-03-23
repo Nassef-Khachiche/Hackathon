@@ -73,10 +73,10 @@ function get_question($question_id)
         if ($row = $result->fetch_assoc()) // create assoc array and put result in
         {
             // output data of each row
-            $question_id = 1;
+            $row[$question_id = 1];
 
             if (isset($_POST['answer'])) {
-                $question_id++;
+                $row[$question_id + 1];
             }
         }
     }
