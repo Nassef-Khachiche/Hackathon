@@ -13,5 +13,6 @@
     <h2> Hoi daar! </h2>
     <p>Wij hebben een quiz gemaakt om erachter te komen wat je dagelijks doet.Nadat je deze quiz hebt gemaakt zien jij of je ouders hulp nodig hebben.</p>  
     <p>Voordat je start willen wij je naam weten.</p>
+    <p>Vul je naam in!<p>
 </body>
-</html>
+</html> 
