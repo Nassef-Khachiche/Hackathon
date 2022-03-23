@@ -43,10 +43,14 @@ function get_question($question_id)
 
     if ($result->num_rows > 0) // if result as obj in num_rows > 0
     {
-        while ($row = $result->fetch_assoc()) // create assoc array and put result in
+        if ($row = $result->fetch_assoc()) // create assoc array and put result in
         {
             // output data of each row
-            
+            $question_id = 1;
+
+            if (isset($_POST['answer'])) {
+                $question_id++;
+            }
         }
     }
     $cn->close(); // close connection
