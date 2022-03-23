@@ -1,18 +1,12 @@
 <?php
 class User {
 
-    public function __construct($firstname, $lastname) {
-      $this->firstname = $firstname;
-      $this->lastname = $lastname;
-
+    public function __construct($username) {
+      $this->name = $username;
     }
 
-    public function get_firstname() {
-      return $this->firstname;
-    }
-
-    public function get_lastname() {
-        return $this->lastname;
+    public function get_username() {
+        return $this->username;
     }
 }
 
@@ -35,12 +29,12 @@ function get_contact_info() {
     $conn = db();
 
     // sql: what data and where it should be stored, values are not set yet so ?,?,?
-    $SELECT = "SELECT leergeld From user Where user_firstname = ? Limit 1";
-    $INSERT = "INSERT INTO user (user_firstname, user_lastname, email) VALUES (?, ?, ?, ?)";
+    $SELECT = "SELECT leergeld From user Where username = ? Limit 1";
+    $INSERT = "INSERT INTO user (username, email, telephone_number, user_message) VALUES (?, ?, ?, ?)";
 
     //blueprint for the database (preparation)
     $stmt = $conn->prepare($SELECT);
-    $stmt->bind_param("s", $firstname);
+    $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->bind_result($firstname);
     $stmt->store_result();
@@ -50,10 +44,11 @@ function get_contact_info() {
     if ($rnum == 0) {     
         $stmt->close();
         $stmt = $conn->prepare($INSERT);
-        $stmt->bind_param("sss", $firstname, $lastname, $email);
+        $stmt->bind_param("ssss", $username, $email, $telephone_number, $user_message);
         $stmt->execute();
         echo "A new record has been inserted succesfully.";
     } else {
+        # Error warning
         echo "These are already in use try to use something else.";
     }
     
@@ -73,10 +68,10 @@ function get_question($question_id)
         if ($row = $result->fetch_assoc()) // create assoc array and put result in
         {
             // output data of each row
-            $question_id = 1;
+            $row[$question_id = 1];
 
             if (isset($_POST['answer'])) {
-                $question_id++;
+                $row[$question_id + 1];
             }
         }
     }
