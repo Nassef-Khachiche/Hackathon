@@ -18,6 +18,8 @@
     <div class="about-container">
         <h1>Over Ons</h1>
         <img src="assets/template-image.png" alt="Stock image of Leergeld">
+        <img src="assets/arrow-pointer.svg" alt="">
+        <img src="assets/arrow-pointer.svg" alt="">
     </div>
 </body>
 </html>
