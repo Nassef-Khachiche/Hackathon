@@ -30,8 +30,35 @@ function db()
     return $cn;
 }
 
-function get_userinfo() {
+function get_contact_info() {
+    // db conn
+    $conn = db();
+
+    // sql: what data and where it should be stored, values are not set yet so ?,?,?
+    $SELECT = "SELECT leergeld From user Where user_firstname = ? Limit 1";
+    $INSERT = "INSERT INTO user (user_firstname, user_lastname, email) VALUES (?, ?, ?, ?)";
+
+    //blueprint for the database (preparation)
+    $stmt = $conn->prepare($SELECT);
+    $stmt->bind_param("s", $firstname);
+    $stmt->execute();
+    $stmt->bind_result($firstname);
+    $stmt->store_result();
+    $rnum = $stmt->num_rows();
+
+    // if there aren't any logins set yet or if it is not the same login only then it will store everything in the database
+    if ($rnum == 0) {     
+        $stmt->close();
+        $stmt = $conn->prepare($INSERT);
+        $stmt->bind_param("sss", $firstname, $lastname, $email);
+        $stmt->execute();
+        echo "A new record has been inserted succesfully.";
+    } else {
+        echo "These are already in use try to use something else.";
+    }
     
+    $stmt->close();
+    $conn->close();
 }
 
 function get_question($question_id)
