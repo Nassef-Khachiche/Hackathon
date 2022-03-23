@@ -18,6 +18,7 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 1px 5px 0.5px #969696;
+    top: 0!important;
 }
 
 .main-nav img
