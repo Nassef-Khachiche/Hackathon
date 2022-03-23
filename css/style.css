@@ -1,3 +1,46 @@
-body {
-    background-color: lightblue;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-nav
+{
+    background-color: #C7D943;
+    height: 35px;
+    display: flex;
+    position: fixed;    
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav img
+{
+    width: 75px;
+    position: relative;
+    top: 3px;
+}
+
+.main-nav a 
+{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.nav-link
+{
+    margin-right: 25px;
+}
+
+.nav-link a:hover
+{
+    transition: 0.5s ease;
+    color: orange;
 }
