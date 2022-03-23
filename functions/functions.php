@@ -48,6 +48,7 @@ function get_contact_info() {
         $stmt->execute();
         echo "A new record has been inserted succesfully.";
     } else {
+        # Error warning
         echo "These are already in use try to use something else.";
     }
     
