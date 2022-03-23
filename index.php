@@ -9,5 +9,10 @@
 </head>
 <body>
     <?php require 'inc/nav.php'; ?>
+    <div class="start-quiz-container">
+        <h1>Stichting Leergeld</h1>
+        <article>Doe nu mee aan onze quiz door op de knop the klikken!</article>
+        <a href="quiz.php">Start Quiz</a>
+    </div>
 </body>
 </html>
