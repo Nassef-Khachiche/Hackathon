@@ -14,5 +14,10 @@
         <article>Doe nu mee aan onze quiz door op de knop the klikken!</article>
         <a href="quiz.php">Start Quiz</a>
     </div>
+    <p class="end-page-line"></p>
+    <div class="about-container">
+        <h1>Over Ons</h1>
+        <img src="assets/template-image.png" alt="Stock image of Leergeld">
+    </div>
 </body>
 </html>
