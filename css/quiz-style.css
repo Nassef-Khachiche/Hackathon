@@ -10,9 +10,13 @@ body{
 }
 
 .quiz-container{
-    display: inline-block;
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    flex-direction: column;
     height: 100%;
     transform: translateY(10%);
+    width: 100vw;
 }
 
 .start-quiz-btn{
@@ -40,4 +44,15 @@ body{
 .name-input{
     width: 300px;
     height: 30px;
+}
+
+.container-entire{
+    display: flex;
+    justify-content: center;
+}
+
+
+.img-div{
+    display: flex;
+    align-items: flex-end;
 }
