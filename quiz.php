@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/quiz-style.css">
+    <script src="js/script_quiz.js"></script>
     <title>Quiz</title>
 </head>
 
@@ -23,10 +24,9 @@
             <div class="input-and-btn">
                 <label for="input-name">Vul je naam in!</label>
                 <input type="text" name="input-name" class="name-input">
-                <a href="" class="start-quiz-btn">Start quiz</a>
+                <a href="quiz_questions.php" class="start-quiz-btn">Start quiz</a>
             </div>
             <div class="img-div">
-            <img src="assets/quiz-img.png" alt="quiz logo" class="quiz-img">
         </div>
         </div>
     </div>
