@@ -17,7 +17,8 @@
         <article>Doe nu mee aan onze quiz door op de knop the klikken!</article>
         <a href="quiz.php">Start Quiz</a>
     </div>
-    <p id="overons" class="end-page-line"></p>
+    <div id="pageJump"></div> 
+    <p class="end-page-line"></p>
     <div class="about-container">
         <h1>Over Ons</h1>
         <!-- Slideshow container -->
@@ -54,6 +55,7 @@
     </article>
     <div class="contact-container">
         <form id="contact-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <h2>Heeft u nog vragen? Vul het formulier hieronder in!</h2>
             <!-- get filepath of file -->
             <label for="fname">Voornaam</label>
             <input type="text" id="fname" name="firstname" placeholder="Jan" required />

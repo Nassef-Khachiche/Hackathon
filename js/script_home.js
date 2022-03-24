@@ -8,7 +8,7 @@ function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
+// Thumbnail image controls 
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
@@ -32,5 +32,5 @@ function showSlides(n) {
 showSlides(slideIndex);
 
 function toOverOns(){
-    window.location = "index.php#overons"
+    window.location = "index.php#pageJump"
 }

@@ -34,16 +34,7 @@
       visibility: hidden;
     }
   }
-  
-  $time_per_image: 4;
-  $images: 3;
-  //12
-  $total_animation_time: $time_per_image * $images;
-  
-  
-  
-  
-  #images-slider {}
+
   .image-holder {height: 300px;}
   .image-holder .image-content-slide { 
     position: absolute;
@@ -51,8 +42,6 @@
     top: 50%;
     width: 750px;
     transform: translate(-50%, -50%);
-    animation:xfade #{$total_animation_time}s infinite;
-    opacity:0;
   }
   .image-holder i {
     position: absolute;
@@ -67,7 +56,6 @@
     z-index: 1000;
     background: #f48b00;
     visibility: hidden;
-    animation:fade #{$total_animation_time}s infinite;
   }
   
   .image-holder .thumbnail-highlted-three {
