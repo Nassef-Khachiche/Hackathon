@@ -3,6 +3,7 @@ const vraag = document.querySelector('.question-count');
 const nextQuestion = document.querySelector('.dummy');
 const emptyDiv = document.querySelector('.elements');
 
+var answer = document.querySelector('.elements');
 let answerList = [];
 var vragenAantal = 1;
 var index = 0;
@@ -56,5 +57,8 @@ volgendeVraag.addEventListener('click', function () {
         vraag.textContent = `Vraag ${vragenAantal}/10`;
         nextQuestion.textContent = questions[index];
         index++
+
+        answerList.push(answer);
+        console.log(answerList);
     }
 })
