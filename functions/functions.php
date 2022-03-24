@@ -73,4 +73,25 @@ function get_question($question_id)
     }
     $cn->close(); // close connection
 }
+
+function insert_form($fname, $lname, $phone, $email, $message)
+{
+    $conn = db();
+    
+    $sql = "INSERT INTO contact_form (`contact_form_fname`,`contact_form_sname`, `contact_form_phone` ,`contact_form_email`,`contact_form_messige`)
+    VALUES ( '". $fname ."', '". $lname ."', '". $phone ."', '". $email ."', '". $message ."')";
+    
+    if ($conn->query($sql) == TRUE) 
+    {
+        echo "New record created successfully";
+    } 
+    else 
+    {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+}
+
+
+
 ?>
