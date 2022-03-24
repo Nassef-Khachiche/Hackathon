@@ -92,6 +92,25 @@ function insert_form($fname, $lname, $phone, $email, $message)
     
 }
 
+// , $ans2, $ans3, $ans4, $ans5, $ans6, $ans7, $ans8, $ans9, $ans10
+// , '". $ans2 ."', '". $ans3 ."', '". $ans4 ."', '". $ans5 ."', '". $ans6 ."', '". $ans7 ."', '". $ans8 ."', '". $ans9 ."', '". $ans10 ."'
+
+// function insert_answers($answers = [])
+// {
+//     $conn = db();
+    
+//     $sql = "INSERT INTO answer (`answer`) VALUES ( '". $answers ."')";
+    
+//     if ($conn->query($sql) == TRUE)
+//     {
+//         echo "New record created successfully";
+//     } 
+//     else 
+//     {
+//         echo "Error: " . $sql . "<br>" . $conn->error;
+//     }
+// }
+
 
 
 ?>

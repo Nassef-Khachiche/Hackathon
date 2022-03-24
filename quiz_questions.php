@@ -13,7 +13,7 @@
 
 <body>
     <?php require 'inc/nav.php'; ?>
-    <?php include 'functions/functions.php';?>
+    <?php include 'functions/functions.php'; ?>
     <div class="container-question">
         <h1 class="question-count"> Vraag 1/10 </h1>
         <h2 class="dummy">Hoe oud ben je?</h2>

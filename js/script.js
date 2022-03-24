@@ -3,10 +3,9 @@ const vraag = document.querySelector('.question-count');
 const nextQuestion = document.querySelector('.dummy');
 const emptyDiv = document.querySelector('.elements');
 
-
+let answerList = [];
 var vragenAantal = 1;
 var index = 0;
-
 
 const questions = ["Ga je vaak op schoolreis?",
 "Doe je mee aan een sport? of een andere buiten schoolse activiteit",
@@ -37,7 +36,7 @@ volgendeVraag.addEventListener('click', function () {
                 emptyDiv.innerHTML = radio;
                 break;
             case 6:
-                emptyDiv.innerHTML = radio;
+                emptyDiv.innerHTML = number;
                 break;
             case 7:
                 emptyDiv.innerHTML = radio;
