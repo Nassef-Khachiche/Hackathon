@@ -70,3 +70,10 @@ body{
 .dummy{
     font-size: 35px;
 }
+
+.quiz-img{
+    max-height: 367px;
+    max-width: 550px;
+    width: 100%;
+    height: auto;
+}
