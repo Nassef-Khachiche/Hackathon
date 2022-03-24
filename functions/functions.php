@@ -51,4 +51,9 @@ function get_question($question_id)
     }
     $cn->close(); // close connection
 }
+
+
+
+
+
 ?>
