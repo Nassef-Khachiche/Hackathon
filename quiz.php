@@ -23,9 +23,13 @@
             <div class="input-and-btn">
                 <label for="input-name">Vul je naam in!</label>
                 <input type="text" name="input-name" class="name-input">
+<<<<<<< Updated upstream
                 <a href="quiz_questions.php" class="start-quiz-btn">
                     <button class="start-quiz-btn">Start quiz</button>
                 </a>
+=======
+                <a href="quiz_questions.php" class="start-quiz-btn">Start quiz</a>
+>>>>>>> Stashed changes
             </div>
         </div>
         <div class="img-div">
