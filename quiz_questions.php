@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/quiz-style.css">
+    <script src="js/script.js" defer></script>
     <title>Quiz questions</title>
 </head>
 
@@ -20,7 +21,7 @@
         <h2 class="dummy">Testvraag</h2>
         <form action="quiz_questions.php" method="post">
             <input type="number" name="answer" id="answer" class="answer">
-            <input type="submit" value="Volgende vraag">
+            <input type="button" value="Volgende vraag" class="btnSubmitQuestion">
         </form>
     </div>
 </body>
