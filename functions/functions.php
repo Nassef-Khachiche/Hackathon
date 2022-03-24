@@ -13,13 +13,13 @@ class User {
 
 function db()
 {
-    $sn = "localhost";
-    $un = "root";
-    $pw = "";
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
     $db = "leergeld";
     
     // create connection
-    $cn = new mysqli($sn, $un, $pw, $db);
+    $cn = new mysqli($servername, $username, $password, $db);
     
     return $cn;
 }
@@ -58,6 +58,7 @@ function get_contact_info() {
 
 function get_question($question_id)
 {
+    // $question_id = 1;
     $cn = db(); // connect to database
 
     $sql = "SELECT * FROM `question` WHERE `question_id` = " . $question_id; // sql question
@@ -65,14 +66,11 @@ function get_question($question_id)
 
     if ($result->num_rows > 0) // if result as obj in num_rows > 0
     {
-        if ($row = $result->fetch_assoc()) // create assoc array and put result in
-        {
-            // output data of each row
-            $row[$question_id = 1];
 
-            if (isset($_POST['answer'])) {
-                $row[$question_id + 1];
-            }
+        while ($row = $result->fetch_assoc()) // create assoc array and put result in
+        {
+            $question = $row['question_id'] . ": " . $row['question'] . "<br>";
+            echo $question;
         }
     }
     $cn->close(); // close connection

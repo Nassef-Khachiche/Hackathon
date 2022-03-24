@@ -13,15 +13,29 @@
 
 <body>
     <?php require 'inc/nav.php'; ?>
+    <?php include 'functions/functions.php';?>
     <div class="container-question">
         <h1 class="question-count"> Vraag 1/12 </h1>
-        <?php get_question(0); ?>
-        <h2 class="dummy">Testvraag</h2>
-        <form action="quiz_questions.php" method="post">
-            <input type="number" name="answer" id="answer" class="answer">
-            <input type="button" value="Volgende vraag" class="btnSubmitQuestion">
+        <h2 class="dummy">
+        
+        <?php
+        
+        $q = $_GET["q"];
+        
+        if (isset($_POST['answer'])) {
+            $q++;
+        }
+
+        get_question($_GET["q"]);
+
+        ?>
+
+        </h2>
+        <form action="quiz_questions.php?q=1" method="POST">
+            <input type="number" id="answer" class="answer">
+            <input type="button" name="answer" value="Volgende vraag" class="btnSubmitQuestion">
         </form>
     </div>
 </body>
-    
+
 </html>
