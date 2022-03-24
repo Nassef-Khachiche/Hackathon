@@ -62,9 +62,9 @@
             <!-- form will not post if empty field -->
             <label for="lname">Achternaam</label>
             <input type="text" id="lname" name="lastname" placeholder="Peters"/>
-            <label for="lname">Telefoon nummer</label>
+            <label for="tel">Telefoon nummer</label>
             <input type="number" id="tel" name="telephone_number" placeholder="123-456-789"/>
-            <label for="country">Email</label>
+            <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="jan@example.com"/>
             <label for="message">Bericht</label>
             <textarea id="message" name="user_message" placeholder="Typ iets.." style="height:200px"></textarea>
