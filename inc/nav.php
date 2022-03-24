@@ -5,6 +5,6 @@
     <nav class="nav-link">
         <a href="../Hackathon/index.php">Home</a>
         <a href="../Hackathon/quiz.php">Start Quiz</a>
-        <a href="">Over Ons</a>
+        <a id="nav-over-ons" onclick='toOverOns()'>Over Ons</a>
     </nav>
 </header>
