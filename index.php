@@ -19,10 +19,10 @@
         <h1>Over Ons</h1>
         <img src="assets/template-image.png" alt="Stock image of Leergeld">
         <div class="a about-pointer-left">
-            <a href=""><img src="assets/arrow-pointer.svg" alt=""></a>
+            <img src="assets/arrow-pointer.svg" alt="">
         </div>
         <div class="a about-pointer-right">
-            <a href="index.php"><img src="assets/arrow-pointer.svg" alt=""></a>
+            <img src="assets/arrow-pointer.svg" alt="">
         </div>
     </div>
     <article class="article-history">
@@ -31,6 +31,17 @@
     Dit initiatief was zo’n succes dat het al snel navolging kreeg in andere steden. Inmiddels is Leergeld uitgegroeid tot een landelijke stichting met een groot aantal vestigingen.
     </article>
     <div class="contact-container">
+        <form id="contact-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> <!-- get filepath of file -->
+            <label for="fname">Voornaam</label>
+            <input type="text" id="fname" name="firstname" placeholder="Jan" required/> <!-- form will not post if empty field -->
+            <label for="lname">Achternaam</label>
+            <input type="text" id="lname" name="lastname" placeholder="Peters"/>
+            <label for="country">Email</label>
+            <input type="text" id="lname" name="lastname" placeholder="jan@example.com"/>
+            <label for="message">Bericht</label>
+            <textarea id="message" name="Message" placeholder="Typ iets.." style="height:200px"></textarea>
+            <input type="submit" value="Verstuur">
+        </form>
     </div>
     <?php require 'inc/footer.php'; ?>
 </body>
