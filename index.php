@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script_home.js"></script>
     <title>Home</title>
 </head>
 <body>
@@ -18,6 +19,8 @@
     <div class="about-container">
         <h1>Over Ons</h1>
         <img src="assets/template-image.png" alt="Stock image of Leergeld">
+        <img src="assets/leergeld2.jpg" alt="" class="leergeld two">
+        <img src="assets/leergeld3.jpg" alt="" class="leergeld three">
         <div class="a about-pointer-left">
             <img src="assets/arrow-pointer.svg" alt="">
         </div>

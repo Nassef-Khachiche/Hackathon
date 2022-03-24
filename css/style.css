@@ -250,3 +250,7 @@ input[type="submit"]:hover
     width: 150px;
     margin: 20px;
 }
+
+.leergeld{
+    display: none;
+}
