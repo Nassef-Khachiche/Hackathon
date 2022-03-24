@@ -6,6 +6,7 @@
     padding: 0px;
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
+    box-sizing:border-box;
 }
 
 .main-nav
@@ -91,7 +92,7 @@ a
 .start-quiz-container a
 {
     background: #03A66A;
-    height: 25px;
+    height: 40px;
     width: 125px;
     text-align: center;
     position: absolute;
@@ -244,6 +245,73 @@ input[type="submit"]:hover
     margin: 20px;
 }
 
-.leergeld{
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+.mySlides {
     display: none;
 }
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color:#03A66A;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transform: translate(-450%, 125%);
+    display: inline-block;
+}
+
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    margin-right: -50px;
+}
+
+.prev{
+    margin-left: -50px;
+}
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    color: #00633f;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  .active {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  #nav-over-ons{
+      cursor: pointer; 
+  }
