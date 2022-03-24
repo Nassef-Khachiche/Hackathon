@@ -3,8 +3,8 @@
         <a href="../Hackathon/index.php"><img src="assets/logo.svg" alt="Logo Foto van Leergeld"></a>
     </div>
     <nav class="nav-link">
-        <a href="">Home</a>
-        <a href="">Start Quiz</a>
-        <a href="">Over Ons</a>
+        <a href="../Hackathon/index.php">Home</a>
+        <a href="../Hackathon/quiz.php">Start Quiz</a>
+        <a id="nav-over-ons" onclick='toOverOns()'>Over Ons</a>
     </nav>
 </header>
