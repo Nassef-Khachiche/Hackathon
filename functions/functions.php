@@ -29,12 +29,12 @@ function get_contact_info() {
     $conn = db();
 
     // sql: what data and where it should be stored, values are not set yet so ?,?,?
-    $SELECT = "SELECT leergeld From user Where username = ? Limit 1";
-    $INSERT = "INSERT INTO user (username, email, telephone_number, user_message) VALUES (?, ?, ?, ?)";
+    $SELECT = "SELECT firstname From user Where firstname = ? Limit 1";
+    $INSERT = "INSERT INTO user (`firstname`, `lastname`, `email`, `telephone_number`, `user_message`) VALUES (?, ?, ?, ?, ?)";
 
     //blueprint for the database (preparation)
     $stmt = $conn->prepare($SELECT);
-    $stmt->bind_param("s", $username);
+    $stmt->bind_param('s', $firstname);
     $stmt->execute();
     $stmt->bind_result($firstname);
     $stmt->store_result();
@@ -44,9 +44,9 @@ function get_contact_info() {
     if ($rnum == 0) {     
         $stmt->close();
         $stmt = $conn->prepare($INSERT);
-        $stmt->bind_param("ssss", $username, $email, $telephone_number, $user_message);
+        $stmt->bind_param("sssis", $firstname, $lastname, $email, $telephone_number, $user_message);
         $stmt->execute();
-        echo "A new record has been inserted succesfully.";
+        echo "A new record has been inserted succesfully.<br>";
     } else {
         # Error warning
         echo "These are already in use try to use something else.";
@@ -58,7 +58,6 @@ function get_contact_info() {
 
 function get_question($question_id)
 {
-    // $question_id = 1;
     $cn = db(); // connect to database
 
     $sql = "SELECT * FROM `question` WHERE `question_id` = " . $question_id; // sql question
@@ -70,8 +69,9 @@ function get_question($question_id)
         while ($row = $result->fetch_assoc()) // create assoc array and put result in
         {
             $question = $row['question_id'] . ": " . $row['question'] . "<br>";
-            echo $question;
         }
+
+        echo $question;
     }
     $cn->close(); // close connection
 }

@@ -12,12 +12,14 @@
 
 <body>
     <?php require 'inc/nav.php'; ?>
+    <?php include 'functions/functions.php'; ?>
     <div class="start-quiz-container">
         <h1>Stichting Leergeld</h1>
         <article>Doe nu mee aan onze quiz door op de knop the klikken!</article>
         <a href="quiz.php">Start Quiz</a>
     </div>
-    <p id="overons" class="end-page-line"></p>
+    <div id="pageJump"></div> 
+    <p class="end-page-line"></p>
     <div class="about-container">
         <h1>Over Ons</h1>
         <!-- Slideshow container -->
@@ -53,17 +55,19 @@
         uitgegroeid tot een landelijke stichting met een groot aantal vestigingen.
     </article>
     <div class="contact-container">
-        <form id="contact-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <!-- get filepath of file -->
+        <form id="contact-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> <!-- get filepath of file -->
+        <?php get_contact_info(); ?>
             <label for="fname">Voornaam</label>
             <input type="text" id="fname" name="firstname" placeholder="Jan" required />
             <!-- form will not post if empty field -->
             <label for="lname">Achternaam</label>
-            <input type="text" id="lname" name="lastname" placeholder="Peters" />
-            <label for="country">Email</label>
-            <input type="text" id="lname" name="lastname" placeholder="jan@example.com" />
+            <input type="text" id="lname" name="lastname" placeholder="Peters"/>
+            <label for="tel">Telefoon nummer</label>
+            <input type="number" id="tel" name="telephone_number" placeholder="123-456-789"/>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="jan@example.com"/>
             <label for="message">Bericht</label>
-            <textarea id="message" name="Message" placeholder="Typ iets.." style="height:200px"></textarea>
+            <textarea id="message" name="user_message" placeholder="Typ iets.." style="height:200px"></textarea>
             <input type="submit" value="Verstuur">
         </form>
     </div>
