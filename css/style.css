@@ -171,7 +171,7 @@ a
     border-radius: 10px;
     left: 50%;
     transform: translate(-50%);
-    bottom: -195vh;
+    bottom: -192vh;
 }
 
 .article-history
@@ -199,19 +199,17 @@ a
 .left-side-footer
 {
     width: 250px;
-    margin: 10px;
+    margin: 20px;
 }
 
 .middle-side-footer
 {
     width: 250px;
-    margin: 10px;
-
+    margin: 20px;
 }
 
 .right-side-footer
 {
     width: 150px;
-    margin: 10px;
-
+    margin: 20px;
 }
