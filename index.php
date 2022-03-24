@@ -54,6 +54,19 @@
         Dit initiatief was zo’n succes dat het al snel navolging kreeg in andere steden. Inmiddels is Leergeld
         uitgegroeid tot een landelijke stichting met een groot aantal vestigingen.
     </article>
+    <?php
+        
+        if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['telephone_number']) && isset($_POST['email']) && isset($_POST['user_message']))
+        {
+            $fname = $_POST['firstname'];
+            $lname = $_POST['lastname'];
+            $phone = $_POST['telephone_number'];
+            $email = $_POST['email'];
+            $message = $_POST['user_message'];
+
+            insert_form($fname, $lname, $phone, $email, $message);
+        }
+    ?>
     <div class="contact-container">
         <form id="contact-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> <!-- get filepath of file -->
         <?php get_contact_info(); ?>
