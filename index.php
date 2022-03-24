@@ -18,8 +18,20 @@
     <div class="about-container">
         <h1>Over Ons</h1>
         <img src="assets/template-image.png" alt="Stock image of Leergeld">
-        <img src="assets/arrow-pointer.svg" alt="">
-        <img src="assets/arrow-pointer.svg" alt="">
+        <div class="a about-pointer-left">
+            <a href=""><img src="assets/arrow-pointer.svg" alt=""></a>
+        </div>
+        <div class="a about-pointer-right">
+            <a href="index.php"><img src="assets/arrow-pointer.svg" alt=""></a>
+        </div>
     </div>
+    <article class="article-history">
+    De eerste Stichting Leergeld werd opgericht in 1996. Dit was een initiatief van een aantal particulieren in Tilburg.<br/><br/>
+    Zij gaven financiële hulp aan gezinnen met leerplichtige kinderen die in armoede leefden. Zij betaalden bijvoorbeeld de schoolboeken of zorgden dat deze kinderen lid konden worden van een sportvereniging.<br/><br/>
+    Dit initiatief was zo’n succes dat het al snel navolging kreeg in andere steden. Inmiddels is Leergeld uitgegroeid tot een landelijke stichting met een groot aantal vestigingen.
+    </article>
+    <div class="contact-container">
+    </div>
+    <?php require 'inc/footer.php'; ?>
 </body>
 </html>
