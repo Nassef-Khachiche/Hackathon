@@ -19,10 +19,10 @@
         <h1>Over Ons</h1>
         <img src="assets/template-image.png" alt="Stock image of Leergeld">
         <div class="a about-pointer-left">
-            <a href=""><img src="assets/arrow-pointer.svg" alt=""></a>
+            <a><img src="assets/arrow-pointer.svg" alt="" class="arrow-left"></a>
         </div>
         <div class="a about-pointer-right">
-            <a href="index.php"><img src="assets/arrow-pointer.svg" alt=""></a>
+            <a><img src="assets/arrow-pointer.svg" alt="" class="arrow-right"></a>
         </div>
     </div>
     <article class="article-history">
