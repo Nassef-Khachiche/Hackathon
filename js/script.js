@@ -9,14 +9,15 @@ var vragenAantal = 1;
 var index = 0;
 
 const questions = ["Ga je vaak op schoolreis?",
-"Doe je mee aan een sport? of een andere buiten schoolse activiteit",
-"Komen jou vrienden vaak bij jou thuis?", "Hebben je ouders een auto?",
-"Hebben jullie thuis een TV?", "Hoevaak per jaar gaan jullie uit met het gezin?",
-"Voel je je vaak buiten gesloten?", "Word je gepest?",
-"Heb je de nieuwste spelcomputer, speelgoed, schoenen etc?"];
+    "Doe je mee aan een sport? of een andere buiten schoolse activiteit",
+    "Komen jou vrienden vaak bij jou thuis?", "Hebben je ouders een auto?",
+    "Hebben jullie thuis een TV?", "Hoevaak per jaar gaan jullie uit met het gezin?",
+    "Voel je je vaak buiten gesloten?", "Word je gepest?",
+    "Heb je de nieuwste spelcomputer, speelgoed, schoenen etc?"
+];
 
 const number = '<input type="number" id="answer" class="answer">'
-const radio = '<input type="radio" name="radio" id="answer" class="answer" value="Ja"> <input type="radio" name="radio" id="answer" class="answer" value="Nee"> <input type="radio" name="radio" id="answer" class="answer" value="Soms"> <input type="radio" name="radio" id="answer" class="answer" value="Niet">'
+const radio = '<input type="radio" name="radio" id="answer" class="answer" value="Ja"><label for"radio">Ja </label> <input type="radio" name="radio" id="answer" class="answer" value="Nee"> <label for"radio">Nee </label> <input type="radio" name="radio" id="answer" class="answer" value="Soms"><label for"radio">Soms</label> <input type="radio" name="radio" id="answer" class="answer" value="Niet"> <label for"radio">Antwoord ik liever niet </label>'
 
 volgendeVraag.addEventListener('click', function () {
     if (vragenAantal != 10) {
@@ -60,5 +61,9 @@ volgendeVraag.addEventListener('click', function () {
 
         answerList.push(answer);
         console.log(answerList);
+    }
+
+    if (vragenAantal == 10) {
+
     }
 })

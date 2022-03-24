@@ -24,6 +24,7 @@
             <input type="button" name="answer" value="Volgende vraag" class="btnSubmitQuestion">
         </form>
     </div>
+    <?php require 'inc/footer.php'; ?>
 </body>
 
 </html>
