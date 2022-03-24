@@ -188,7 +188,7 @@ a
     width: 650px;
 }
 
-input[type="text"], textarea 
+.contact-container input[type="text"], textarea , input[type="email"], .contact-container input[type="number"]
 {
     width: 96%;
     padding: 12px;
@@ -198,7 +198,7 @@ input[type="text"], textarea
     margin-bottom: 15px;
     resize: vertical;
 }
-  
+
 input[type="submit"] 
 {
     background-color: #04AA6D;

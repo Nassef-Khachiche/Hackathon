@@ -15,23 +15,9 @@
     <?php require 'inc/nav.php'; ?>
     <?php include 'functions/functions.php';?>
     <div class="container-question">
-        <h1 class="question-count"> Vraag 1/12 </h1>
-        <h2 class="dummy">
-        
-        <?php
-        
-        $q = $_GET["q"];
-        
-        if (isset($_POST['answer'])) {
-            $q++;
-        }
-
-        get_question($_GET["q"]);
-
-        ?>
-
-        </h2>
-        <form action="quiz_questions.php?q=1" method="POST">
+        <h1 class="question-count"> Vraag 1/10 </h1>
+        <h2 class="dummy">Hoe oud ben je?</h2>
+        <form action="quiz_questions.php" method="POST">
             <input type="number" id="answer" class="answer">
             <input type="button" name="answer" value="Volgende vraag" class="btnSubmitQuestion">
         </form>
