@@ -18,7 +18,9 @@
         <h1 class="question-count"> Vraag 1/10 </h1>
         <h2 class="dummy">Hoe oud ben je?</h2>
         <form action="quiz_questions.php" method="POST">
+            <div class="elements">
             <input type="number" id="answer" class="answer">
+            </div>
             <input type="button" name="answer" value="Volgende vraag" class="btnSubmitQuestion">
         </form>
     </div>

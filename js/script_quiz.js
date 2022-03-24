@@ -5,10 +5,4 @@ if (startQuiz) {
         window.location = "quiz_questions.php"
     })
 }
-const nextQuestion = document.querySelector('.dummy');
-if (nextQuestion) {
-    const questions = ["Hoe oud ben je?", "Ga je vaak op schoolreis?"];
-    let questionIndex = 0;
-    nextQuestion.textContent = questions[questionIndex];
-}
 

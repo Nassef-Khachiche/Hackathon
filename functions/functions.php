@@ -46,12 +46,11 @@ function get_contact_info() {
         $stmt = $conn->prepare($INSERT);
         $stmt->bind_param("sssis", $firstname, $lastname, $email, $telephone_number, $user_message);
         $stmt->execute();
-        echo "A new record has been inserted succesfully.<br>";
+        // echo "A new record has been inserted succesfully.<br>";
     } else {
         # Error warning
         echo "These are already in use try to use something else.";
     }
-    
     $stmt->close();
     $conn->close();
 }
@@ -65,7 +64,6 @@ function get_question($question_id)
 
     if ($result->num_rows > 0) // if result as obj in num_rows > 0
     {
-
         while ($row = $result->fetch_assoc()) // create assoc array and put result in
         {
             $question = $row['question_id'] . ": " . $row['question'] . "<br>";

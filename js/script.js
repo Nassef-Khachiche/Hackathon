@@ -1,27 +1,61 @@
 const volgendeVraag = document.querySelector('.btnSubmitQuestion');
 const vraag = document.querySelector('.question-count');
 const nextQuestion = document.querySelector('.dummy');
+const emptyDiv = document.querySelector('.elements');
 
 
 var vragenAantal = 1;
-let questionIndex = 1;
+var index = 0;
 
-const questions = ["Hoe oud ben je?", "Ga je vaak op schoolreis?",
+
+const questions = ["Ga je vaak op schoolreis?",
 "Doe je mee aan een sport? of een andere buiten schoolse activiteit",
 "Komen jou vrienden vaak bij jou thuis?", "Hebben je ouders een auto?",
 "Hebben jullie thuis een TV?", "Hoevaak per jaar gaan jullie uit met het gezin?",
 "Voel je je vaak buiten gesloten?", "Word je gepest?",
 "Heb je de nieuwste spelcomputer, speelgoed, schoenen etc?"];
 
-const elements = [];
-
-
+const number = '<input type="number" id="answer" class="answer">'
+const radio = '<input type="radio" name="radio" id="answer" class="answer" value="Ja"> <input type="radio" name="radio" id="answer" class="answer" value="Nee"> <input type="radio" name="radio" id="answer" class="answer" value="Soms"> <input type="radio" name="radio" id="answer" class="answer" value="Niet">'
 
 volgendeVraag.addEventListener('click', function () {
     if (vragenAantal != 10) {
+        switch (vragenAantal) {
+            case 1:
+                emptyDiv.innerHTML = radio;
+                break;
+            case 2:
+                emptyDiv.innerHTML = radio;
+                break;
+            case 3:
+                emptyDiv.innerHTML = radio;
+                break;
+            case 4:
+                emptyDiv.innerHTML = radio;
+                break;
+            case 5:
+                emptyDiv.innerHTML = radio;
+                break;
+            case 6:
+                emptyDiv.innerHTML = radio;
+                break;
+            case 7:
+                emptyDiv.innerHTML = radio;
+                break;
+            case 8:
+                emptyDiv.innerHTML = radio;
+                break;
+            case 9:
+                emptyDiv.innerHTML = radio;
+                break;
+            case 10:
+                emptyDiv.innerHTML = radio;
+                break;
+        }
         vragenAantal++;
+
         vraag.textContent = `Vraag ${vragenAantal}/10`;
-        nextQuestion.textContent = questions[questionIndex];
-        questionIndex++;
+        nextQuestion.textContent = questions[index];
+        index++
     }
 })
