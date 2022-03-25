@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/quiz-style.css">
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
     <script src="js/script.js" defer></script>
     <title>Quiz questions</title>
 </head>
