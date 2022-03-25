@@ -1,10 +1,14 @@
 const startQuiz = document.querySelector('.start-quiz-btn');
 const nameInput = document.querySelector('.name-input');
+const einde = document.querySelector('.endButton');
 
-startQuiz.style.pointerEvents = "none";
-startQuiz.style.cursor = "default";
+if (startQuiz) {
 
-function trackText(){
+    startQuiz.style.pointerEvents = "none";
+    startQuiz.style.cursor = "default";
+}
+
+function trackText() {
     startQuiz.style.pointerEvents = "auto";
     startQuiz.style.cursor = "pointer";
 
@@ -14,3 +18,8 @@ function trackText(){
         })
     }
 }
+
+einde.addEventListener('click', function () {
+    console.log('test');
+    window.location = "index.php"
+})

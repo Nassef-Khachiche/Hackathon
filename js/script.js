@@ -10,6 +10,7 @@ var vragenAantal = 1;
 var index = 0;
 let answerIndex = 0;
 
+
 const questions = [
     "Ga je vaak op schoolreis?",
     "Doe je mee aan een sport? of een andere buiten schoolse activiteit",
@@ -21,46 +22,46 @@ const questions = [
 
 const number = '<input type="number" id="answer" class="answer">'
 const radio = '<input type="radio" name="radio" id="answer" class="answer" value="Ja"><label class="label" for"radio">Ja </label> <input type="radio" name="radio" id="answer" class="answer" value="Nee"> <label for"radio">Nee </label> <input type="radio" name="radio" id="answer" class="answer" value="Soms"><label for"radio">Soms</label> <input type="radio" name="radio" id="answer" class="answer" value="Niet"> <label for"radio">Antwoord ik liever niet </label>'
+if (volgendeVraag) {
+    volgendeVraag.addEventListener('click', function () {
+        if (vragenAantal != 11) {
+            switch (vragenAantal) {
+                case 1:
+                    emptyDiv.innerHTML = radio;
+                    break;
+                case 2:
+                    emptyDiv.innerHTML = radio;
+                    break;
+                case 3:
+                    emptyDiv.innerHTML = radio;
+                    break;
+                case 4:
+                    emptyDiv.innerHTML = radio;
+                    break;
+                case 5:
+                    emptyDiv.innerHTML = radio;
+                    break;
+                case 6:
+                    emptyDiv.innerHTML = number;
+                    break;
+                case 7:
+                    emptyDiv.innerHTML = radio;
+                    break;
+                case 8:
+                    emptyDiv.innerHTML = radio;
+                    break;
+                case 9:
+                    emptyDiv.innerHTML = radio;
+                    break;
+                case 10:
+                    emptyDiv.innerHTML = radio;
+                    break;
+            }
+            vragenAantal++;
 
-volgendeVraag.addEventListener('click', function () {
-    if (vragenAantal != 11) {
-        switch (vragenAantal) {
-            case 1:
-                emptyDiv.innerHTML = radio;
-                break;
-            case 2:
-                emptyDiv.innerHTML = radio;
-                break;
-            case 3:
-                emptyDiv.innerHTML = radio;
-                break;
-            case 4:
-                emptyDiv.innerHTML = radio;
-                break;
-            case 5:
-                emptyDiv.innerHTML = radio;
-                break;
-            case 6:
-                emptyDiv.innerHTML = number;
-                break;
-            case 7:
-                emptyDiv.innerHTML = radio;
-                break;
-            case 8:
-                emptyDiv.innerHTML = radio;
-                break;
-            case 9:
-                emptyDiv.innerHTML = radio;
-                break;
-            case 10:
-                emptyDiv.innerHTML = radio;
-                break;
-        }
-        vragenAantal++;
-
-        vraag.textContent = `Vraag ${vragenAantal}/10`;
-        nextQuestion.textContent = questions[index];
-        index++
+            vraag.textContent = `Vraag ${vragenAantal}/10`;
+            nextQuestion.textContent = questions[index];
+            index++
 
         answerList.push(answer.textContent);
         answerIndex++;
