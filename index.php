@@ -55,21 +55,21 @@
         uitgegroeid tot een landelijke stichting met een groot aantal vestigingen.
     </article>
     <?php
-        
-        if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['telephone_number']) && isset($_POST['email']) && isset($_POST['user_message']))
-        {
-            $fname = $_POST['firstname'];
-            $lname = $_POST['lastname'];
-            $phone = $_POST['telephone_number'];
-            $email = $_POST['email'];
-            $message = $_POST['user_message'];
 
-            insert_form($fname, $lname, $phone, $email, $message);
-        }
-    ?>
+if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['telephone_number']) && isset($_POST['email']) && isset($_POST['user_message'])) {
+    $fname = $_POST['firstname'];
+    $lname = $_POST['lastname'];
+    $phone = $_POST['telephone_number'];
+    $email = $_POST['email'];
+    $message = $_POST['user_message'];
+
+    insert_form($fname, $lname, $phone, $email, $message);
+}
+?>
     <div class="contact-container">
         <form id="contact-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> <!-- get filepath of file -->
-        <?php get_contact_info(); ?>
+        <?php get_contact_info(); ?>    
+            <h3>Vul het contactformulier hier in als u nog vragen heeft!</h3>
             <label for="fname">Voornaam</label>
             <input type="text" id="fname" name="firstname" placeholder="Jan" required />
             <!-- form will not post if empty field -->
