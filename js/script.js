@@ -4,8 +4,8 @@ const nextQuestion = document.querySelector('.dummy');
 const emptyDiv = document.querySelector('.elements');
 const buttonEnd = document.querySelector('.buttonEnd');
 
-// let answer = document.getElementById('answer');
-let answerList = [];
+let answer = document.querySelectorAll('radio');
+let answerList = ['12', 'Nee', 'Ja', 'Nee', 'Nee', 'Ja', '2', 'Nee', 'Ja', 'Nee'];
 var vragenAantal = 1;
 var index = 0;
 let answerIndex = 0;
@@ -22,10 +22,8 @@ const questions = [
 
 const number = '<input type="number" id="answer" class="answer">'
 const radio = '<input type="radio" name="radio" id="answer" class="answer" value="Ja"><label class="label" for"radio">Ja </label> <input type="radio" name="radio" id="answer" class="answer" value="Nee"> <label for"radio">Nee </label> <input type="radio" name="radio" id="answer" class="answer" value="Soms"><label for"radio">Soms</label> <input type="radio" name="radio" id="answer" class="answer" value="Niet"> <label for"radio">Antwoord ik liever niet </label>'
-
 if (volgendeVraag) {
     volgendeVraag.addEventListener('click', function () {
-        let answer = document.getElementById('answer');
         if (vragenAantal != 11) {
             switch (vragenAantal) {
                 case 1:
@@ -63,19 +61,10 @@ if (volgendeVraag) {
 
             vraag.textContent = `Vraag ${vragenAantal}/10`;
             nextQuestion.textContent = questions[index];
-            index++;
+            index++
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        answerList.push(answer.value);
-=======
         // answerList.push(answer.textContent);
         // answerList.push();
->>>>>>> Stashed changes
-=======
-        answerList.fill(answer.value);
-        // answerList.push(answer.value);
->>>>>>> Stashed changes
         answerIndex++;
         console.log(answerList);
         loadEndPage();
@@ -86,6 +75,7 @@ function loadEndPage() {
         if (vragenAantal == 11) {
             vraag.textContent = 'Vraag 10/10';
             window.location = "einde.php";
+
         }
     }
 }
