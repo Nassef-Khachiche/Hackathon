@@ -4,7 +4,7 @@ const nextQuestion = document.querySelector('.dummy');
 const emptyDiv = document.querySelector('.elements');
 const buttonEnd = document.querySelector('.buttonEnd');
 
-let answer = document.getElementById('answer').value;
+// let answer = document.getElementById('answer');
 let answerList = [];
 var vragenAantal = 1;
 var index = 0;
@@ -22,8 +22,10 @@ const questions = [
 
 const number = '<input type="number" id="answer" class="answer">'
 const radio = '<input type="radio" name="radio" id="answer" class="answer" value="Ja"><label class="label" for"radio">Ja </label> <input type="radio" name="radio" id="answer" class="answer" value="Nee"> <label for"radio">Nee </label> <input type="radio" name="radio" id="answer" class="answer" value="Soms"><label for"radio">Soms</label> <input type="radio" name="radio" id="answer" class="answer" value="Niet"> <label for"radio">Antwoord ik liever niet </label>'
+
 if (volgendeVraag) {
     volgendeVraag.addEventListener('click', function () {
+        let answer = document.getElementById('answer');
         if (vragenAantal != 11) {
             switch (vragenAantal) {
                 case 1:
@@ -61,9 +63,9 @@ if (volgendeVraag) {
 
             vraag.textContent = `Vraag ${vragenAantal}/10`;
             nextQuestion.textContent = questions[index];
-            index++
+            index++;
 
-        answerList.push(answer);
+        answerList.push(answer.value);
         answerIndex++;
         console.log(answerList);
         loadEndPage();
