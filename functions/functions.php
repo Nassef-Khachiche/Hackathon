@@ -63,7 +63,7 @@ else
         7 => array( 7, 0 ),
         8 => array( 8, 0 ),
         9 => array( 9, 0 ),
-        9 => array( 9, 0 )
+        10 => array( 10, 0 )
     );
     $antwoord__1 = 0;
     $antwoord__2 = 0;
@@ -189,8 +189,8 @@ function laat_vraag_zien($vraag_id)
                         <input type="Submit">
                     </form> 
                     <form method="post">
-                        <input type="submit" name="knop_min" />
-                        <input type="submit" name="knop_plus" />
+                        <input type="submit" name="knop_min" value="vorige vraag" />
+                        <input type="submit" name="knop_plus" value="vlogende vraag" />
                     </form>
                 ';
             }    
@@ -258,15 +258,15 @@ function laat_vraag_zien($vraag_id)
                 <form method="get" action="quiz_questions.php">
                 <br><br>
                 <form action="" method="post">
-                    <input type="submit" name="stuur_vraag" />
+                    <input value="verstuur" type="submit" name="stuur_vraag" />
                 </form>
 
                 <br><br>
                     
                 </form> 
                 <form method="post">
-                    <input type="submit" name="knop_min" />
-                    <input type="submit" name="knop_plus" />
+                    <input type="submit" name="knop_min" value="vorige vraag" />
+                    <input type="submit" name="knop_plus" value="vlogende vraag" />
                 </form>
                 ';
             }    
@@ -276,6 +276,32 @@ function laat_vraag_zien($vraag_id)
             }
                     
         }
+    }
+}
+
+function insert_questions($name, $vraag_1, $vraag_2, $vraag_3, $vraag_4, $vraag_5, $vraag_6, $vraag_7, $vraag_8, $vraag_9)
+{
+    $conn = db();
+
+    if ($name != "" && $vraag_1 != 0 && $vraag_2 != 0 && $vraag_3 != 0 && $vraag_4 != 0 && $vraag_5 != 0 && $vraag_6 != 0 && $vraag_7 != 0 && $vraag_8 != 0 && $vraag_9 != 0) 
+    {
+        $sql = "INSERT INTO `antwoorden`(`antwoord_id`, `antwoord_naam`, `antwoord_1`, `antwoord_2`, `antwoord_3`, `antwoord_4`, `antwoord_5`, `antwoord_6`, `antwoord_7`, `antwoord_8`, `antwoord_9`) 
+        VALUES 
+        ('". $name ."', ". $vraag_1 ." , ". $vraag_2 ." , ". $vraag_3 ." , ". $vraag_4 ." , ". $vraag_5 ." , ". $vraag_6 ." , ". $vraag_7 ." , ". $vraag_8 ." , ". $vraag_9 ." )";
+
+        
+       if ($conn->query($sql) == TRUE) 
+        {
+            echo "New record created successfully";
+        } 
+        else 
+        {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+    else 
+    {
+        echo "please fill everything in";
     }
 
 }
