@@ -4,7 +4,7 @@ const nextQuestion = document.querySelector('.dummy');
 const emptyDiv = document.querySelector('.elements');
 const buttonEnd = document.querySelector('.buttonEnd');
 
-let answer = document.querySelector('radio');
+let answer = document.getElementById('answer').value;
 let answerList = [];
 var vragenAantal = 1;
 var index = 0;
@@ -63,7 +63,7 @@ if (volgendeVraag) {
             nextQuestion.textContent = questions[index];
             index++
 
-        answerList.push(answer.textContent);
+        answerList.push(answer);
         answerIndex++;
         console.log(answerList);
         loadEndPage();
@@ -71,8 +71,9 @@ if (volgendeVraag) {
 })
 
 function loadEndPage() {
-    if (vragenAantal == 11) {
-        vraag.textContent = 'Vraag 10/10';
-        window.location = "einde.php";
+        if (vragenAantal == 11) {
+            vraag.textContent = 'Vraag 10/10';
+            window.location = "einde.php";
+        }
     }
 }
