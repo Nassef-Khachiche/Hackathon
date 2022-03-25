@@ -159,6 +159,8 @@ function insert_form($fname, $lname, $phone, $email, $message)
     
 }
 
+
+
 function laat_vraag_zien($vraag_id)
 {
 
@@ -174,7 +176,7 @@ function laat_vraag_zien($vraag_id)
 
             $question = $row['question_id'] . ": " . $row['question'] . "<br>";
                 
-            if ($vraag_id == 1) 
+            if ($vraag_id == 1 ||$vraag_id == 7 ) 
             {
                 echo 
                 '
@@ -182,7 +184,7 @@ function laat_vraag_zien($vraag_id)
                         <br><br>
                         Vraag'. $row['question_id'] .'/10 
                         <br><br> '. $row['question'] .' <br><br>
-                        <input type="text" name="' . $vraag_id . '">
+                        <input type="number" name="' . $vraag_id . '">
                         <br><br>
                         <input type="Submit">
                     </form> 
@@ -192,7 +194,7 @@ function laat_vraag_zien($vraag_id)
                     </form>
                 ';
             }    
-            if ($vraag_id != 1 && $vraag_id != 10) 
+            if ($vraag_id != 1 &&  $vraag_id != 5 && $vraag_id != 6 && $vraag_id != 7  &&  $vraag_id != 10) 
             {
                 echo
                     '
@@ -213,11 +215,38 @@ function laat_vraag_zien($vraag_id)
                             <input type="radio" id="D" name="' . $vraag_id . '" value="4">
                             <label for="D">beantwoord ik liever niet</label><br>
                         </div>
-                        <input type="Submit">
+                        <input type="Submit" value="dit is mijn antwoord">
                     </form> 
                     <form method="post">
-                        <input type="submit" name="knop_min" />
-                        <input type="submit" name="knop_plus" />
+                        <input type="submit" name="knop_min" value="vorige vraag" />
+                        <input type="submit" name="knop_plus" value="vlogende vraag" />
+                    </form>
+                    <br><br>
+                    ';
+            }
+            if ($vraag_id == 5 || $vraag_id == 6) 
+            {
+                echo
+                    '
+                    <form method="get" action="quiz_questions.php">
+                        <div>
+                            <br><br>
+                            Vraag'. $row['question_id'] .'/10 
+                            <br><br> '. $row['question'] .' <br><br>
+                            <input type="radio" id="A" name="' . $vraag_id . '" value="1">
+                            <label for="A">ja</label><br>
+                    
+                            <input type="radio" id="B" name="' . $vraag_id . '" value="2">
+                            <label for="B">nee</label><br>
+                    
+                            <input type="radio" id="D" name="' . $vraag_id . '" value="4">
+                            <label for="D">beantwoord ik liever niet</label><br>
+                        </div>
+                        <input type="Submit" value="dit is mijn antwoord">
+                    </form> 
+                    <form method="post">
+                        <input type="submit" name="knop_min" value="vorige vraag" />
+                        <input type="submit" name="knop_plus" value="vlogende vraag" />
                     </form>
                     <br><br>
                     ';
@@ -233,7 +262,6 @@ function laat_vraag_zien($vraag_id)
                 </form>
 
                 <br><br>
-                    
                     
                 </form> 
                 <form method="post">

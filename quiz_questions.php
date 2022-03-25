@@ -1,12 +1,17 @@
 <?php
 require('functions/functions.php');
 
-if (!isset($_SESSION['vraag_index_mem'])) 
+if (!isset($_SESSION['vraag_index_mem']) && !empty($_SESSION['vraag_index_mem']) ) 
 {
     $_SESSION['vraag_index_mem'] = 1;
 }
+elseif(!empty($_SESSION['vraag_index_mem']))
+{
+    $vraag_index = $_SESSION['vraag_index_mem'];
+}
 else
 {
+    $_SESSION['vraag_index_mem'] = 1;
     $vraag_index = $_SESSION['vraag_index_mem'];
 }
 
@@ -51,8 +56,6 @@ $_SESSION['vraag_index_mem'] = $vraag_index;
         if (isset($_GET[$antwoord_array[$vraag_index][0]])) 
         {
             $antwoord_array[$vraag_index][1] = $_GET[$antwoord_array[$vraag_index][0]];
-            echo '<br> index '. $vraag_index .' ---- <br>';
-            echo '<br> vraag '. $_GET[$antwoord_array[$vraag_index][0]] .' ---- <br>';
             
             $antwoord_1 = $antwoord_array[1][1];
             $antwoord_2 = $antwoord_array[2][1];
@@ -75,7 +78,6 @@ $_SESSION['vraag_index_mem'] = $vraag_index;
             $_SESSION['antwoord9'] = $antwoord_9;
         }
 
-    /* dit is een cheetsheet van de waardes
     echo $antwoord_array[1][0] . '  ' . $antwoord_array[1][1] . '<br>' ;
     echo $antwoord_array[2][0] . '  ' . $antwoord_array[2][1] . '<br>' ;
     echo $antwoord_array[3][0] . '  ' . $antwoord_array[3][1] . '<br>' ;
@@ -85,8 +87,8 @@ $_SESSION['vraag_index_mem'] = $vraag_index;
     echo $antwoord_array[7][0] . '  ' . $antwoord_array[7][1] . '<br>' ;
     echo $antwoord_array[8][0] . '  ' . $antwoord_array[8][1] . '<br>' ;
     echo $antwoord_array[9][0] . '  ' . $antwoord_array[9][1] . '<br>' ;
-    */
     ?>
+
     
     <?php require 'inc/footer.php'; ?>
 </body>

@@ -1,3 +1,9 @@
+<?php
+include 'functions/functions.php';
+print_r($_SESSION);
+
+?>  
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +18,7 @@
 
 <body>
     <?php require 'inc/nav.php'; ?>
-    <?php include 'functions/functions.php'; ?>
+
     <div class="start-quiz-container">
         <h1>Stichting Leergeld</h1>
         <article>Doe nu mee aan onze quiz door op de knop the klikken!</article>
