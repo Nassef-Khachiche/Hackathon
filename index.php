@@ -1,7 +1,5 @@
 <?php
 include 'functions/functions.php';
-print_r($_SESSION);
-
 ?>  
 
 <!DOCTYPE html>

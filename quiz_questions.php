@@ -78,7 +78,7 @@ $_SESSION['vraag_index_mem'] = $vraag_index;
             $_SESSION['antwoord8'] = $antwoord_8;
             $_SESSION['antwoord9'] = $antwoord_9;
         }
-
+    /*
     echo $antwoord_array[1][0] . '  ' . $antwoord_array[1][1] . '<br>' ;
     echo $antwoord_array[2][0] . '  ' . $antwoord_array[2][1] . '<br>' ;
     echo $antwoord_array[3][0] . '  ' . $antwoord_array[3][1] . '<br>' ;
@@ -88,6 +88,7 @@ $_SESSION['vraag_index_mem'] = $vraag_index;
     echo $antwoord_array[7][0] . '  ' . $antwoord_array[7][1] . '<br>' ;
     echo $antwoord_array[8][0] . '  ' . $antwoord_array[8][1] . '<br>' ;
     echo $antwoord_array[9][0] . '  ' . $antwoord_array[9][1] . '<br>' ;
+    */
     ?>
 
     
