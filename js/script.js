@@ -4,13 +4,8 @@ const nextQuestion = document.querySelector('.dummy');
 const emptyDiv = document.querySelector('.elements');
 const buttonEnd = document.querySelector('.buttonEnd');
 
-<<<<<<< Updated upstream
 // let answer = document.getElementById('answer');
 let answerList = [];
-=======
-let answer = document.querySelectorAll('radio');
-let answerList = ['12', 'Nee', 'Ja', 'Nee', 'Nee', 'Ja', '2', 'Nee', 'Ja', 'Nee'];
->>>>>>> Stashed changes
 var vragenAantal = 1;
 var index = 0;
 let answerIndex = 0;
@@ -71,10 +66,15 @@ if (volgendeVraag) {
             index++;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         answerList.push(answer.value);
 =======
         // answerList.push(answer.textContent);
         // answerList.push();
+>>>>>>> Stashed changes
+=======
+        answerList.fill(answer.value);
+        // answerList.push(answer.value);
 >>>>>>> Stashed changes
         answerIndex++;
         console.log(answerList);
