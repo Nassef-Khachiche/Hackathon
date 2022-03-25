@@ -24,7 +24,7 @@
             <div class="input-and-btn">
                 <label for="input-name">Vul je naam in!</label>
                 <input type="text" name="input-name" class="name-input" onchange="trackText()">
-                <a href="quiz_questions.php?q=1" class="start-quiz-btn">Start quiz</a>
+                <a href="quiz_questions.php" class="start-quiz-btn">Start quiz</a>
             </div>
             <div class="img-div">
         </div>

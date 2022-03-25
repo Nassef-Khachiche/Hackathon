@@ -10,6 +10,73 @@ class User {
     }
 }
 
+session_start();
+
+if 
+(  
+    isset($_SESSION['antwoord_1']) && 
+    isset($_SESSION['antwoord_2']) && 
+    isset($_SESSION['antwoord_3']) && 
+    isset($_SESSION['antwoord_4']) && 
+    isset($_SESSION['antwoord_5']) && 
+    isset($_SESSION['antwoord_6']) && 
+    isset($_SESSION['antwoord_7']) && 
+    isset($_SESSION['antwoord_8']) && 
+    isset($_SESSION['antwoord_9']) && 
+    isset($_SESSION['antwoord_10']) 
+)
+{
+    $antwoord_array = array (
+
+        1  => array("vraag_1" , $_SESSION['antwoord_1'] ),
+        2  => array("vraag_2" , $_SESSION['antwoord_2'] ),
+        3  => array("vraag_3" , $_SESSION['antwoord_3'] ),
+        4  => array("vraag_4" , $_SESSION['antwoord_4'] ),
+        5  => array("vraag_5" , $_SESSION['antwoord_5'] ),
+        6  => array("vraag_6" , $_SESSION['antwoord_6'] ),
+        7  => array("vraag_7" , $_SESSION['antwoord_7'] ),
+        8  => array("vraag_8" , $_SESSION['antwoord_8'] ),
+        9  => array("vraag_9" , $_SESSION['antwoord_9'] ),
+        10 => array("vraag_10" , $_SESSION['antwoord_10'] )
+    );
+    $antwoord__1 = $_SESSION['antwoord_1'];
+    $antwoord__2 = $_SESSION['antwoord_2'];
+    $antwoord__3 = $_SESSION['antwoord_3'];
+    $antwoord__4 = $_SESSION['antwoord_4'];
+    $antwoord__5 = $_SESSION['antwoord_5'];
+    $antwoord__6 = $_SESSION['antwoord_6'];
+    $antwoord__7 = $_SESSION['antwoord_7'];
+    $antwoord__8 = $_SESSION['antwoord_8'];
+    $antwoord__9 = $_SESSION['antwoord_9'];
+    $antwoord__10 = $_SESSION['antwoord_10'];
+}
+else
+{
+    $antwoord_array = array (
+
+        1 => array( 1, 0 ),
+        2 => array( 2, 0 ),
+        3 => array( 3, 0 ),
+        4 => array( 4, 0 ),
+        5 => array( 5, 0 ),
+        6 => array( 6, 0 ),
+        7 => array( 7, 0 ),
+        8 => array( 8, 0 ),
+        9 => array( 9, 0 ),
+        9 => array( 9, 0 )
+    );
+    $antwoord__1 = 0;
+    $antwoord__2 = 0;
+    $antwoord__3 = 0;
+    $antwoord__4 = 0;
+    $antwoord__5 = 0;
+    $antwoord__6 = 0;
+    $antwoord__7 = 0;
+    $antwoord__8 = 0;
+    $antwoord__9 = 0;
+    $antwoord__10 = 0;
+}
+
 
 function db()
 {
@@ -92,14 +159,107 @@ function insert_form($fname, $lname, $phone, $email, $message)
     
 }
 
+function laat_vraag_zien($vraag_id)
+{
+
+
+    $cn = db(); // connect to database
+    $sql = "SELECT * FROM `question` WHERE `question_id` = " . $vraag_id; // sql question
+    $result = $cn->query($sql);
+
+    if ($result->num_rows > 0) 
+    {
+        while ($row = $result->fetch_assoc()) // create assoc array and put result in
+        {
+
+            $question = $row['question_id'] . ": " . $row['question'] . "<br>";
+                
+            if ($vraag_id == 1) 
+            {
+                echo 
+                '
+                    <form method="get" action="quiz_questions.php">
+                        <br><br>
+                        Vraag'. $row['question_id'] .'/10 
+                        <br><br> '. $row['question'] .' <br><br>
+                        <input type="text" name="' . $vraag_id . '">
+                        <br><br>
+                        <input type="Submit">
+                    </form> 
+                    <form method="post">
+                        <input type="submit" name="knop_min" />
+                        <input type="submit" name="knop_plus" />
+                    </form>
+                ';
+            }    
+            if ($vraag_id != 1 && $vraag_id != 10) 
+            {
+                echo
+                    '
+                    <form method="get" action="quiz_questions.php">
+                        <div>
+                            <br><br>
+                            Vraag'. $row['question_id'] .'/10 
+                            <br><br> '. $row['question'] .' <br><br>
+                            <input type="radio" id="A" name="' . $vraag_id . '" value="1">
+                            <label for="A">ja</label><br>
+                    
+                            <input type="radio" id="B" name="' . $vraag_id . '" value="2">
+                            <label for="B">nee</label><br>
+                    
+                            <input type="radio" id="C" name="' . $vraag_id . '" value="3">
+                            <label for="C">soms</label><br>
+                    
+                            <input type="radio" id="D" name="' . $vraag_id . '" value="4">
+                            <label for="D">beantwoord ik liever niet</label><br>
+                        </div>
+                        <input type="Submit">
+                    </form> 
+                    <form method="post">
+                        <input type="submit" name="knop_min" />
+                        <input type="submit" name="knop_plus" />
+                    </form>
+                    <br><br>
+                    ';
+            }
+            if ($vraag_id == 10) 
+            {
+                echo 
+                '
+                <form method="get" action="quiz_questions.php">
+                <br><br>
+                <form action="" method="post">
+                    <input type="submit" name="stuur_vraag" />
+                </form>
+
+                <br><br>
+                    
+                    
+                </form> 
+                <form method="post">
+                    <input type="submit" name="knop_min" />
+                    <input type="submit" name="knop_plus" />
+                </form>
+                ';
+            }    
+            if ($vraag_id < 1 || $vraag_id > 11) 
+            {
+                echo 'error';
+            }
+                    
+        }
+    }
+
+}
+
 // , $ans2, $ans3, $ans4, $ans5, $ans6, $ans7, $ans8, $ans9, $ans10
 // , '". $ans2 ."', '". $ans3 ."', '". $ans4 ."', '". $ans5 ."', '". $ans6 ."', '". $ans7 ."', '". $ans8 ."', '". $ans9 ."', '". $ans10 ."'
 
-// function insert_answers($answers = [])
+// function insert_antwoord_s($antwoord_s = [])
 // {
 //     $conn = db();
     
-//     $sql = "INSERT INTO answer (`answer`) VALUES ( '". $answers ."')";
+//     $sql = "INSERT INTO antwoord_ (`antwoord_`) VALUES ( '". $antwoord_s ."')";
     
 //     if ($conn->query($sql) == TRUE)
 //     {

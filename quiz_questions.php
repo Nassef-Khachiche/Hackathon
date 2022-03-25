@@ -1,6 +1,36 @@
+<?php
+require('functions/functions.php');
+
+if (!isset($_SESSION['vraag_index_mem'])) 
+{
+    $_SESSION['vraag_index_mem'] = 1;
+}
+else
+{
+    $vraag_index = $_SESSION['vraag_index_mem'];
+}
+
+if(isset($_POST['knop_plus']))
+{
+    if($vraag_index < 9)
+    {
+        $vraag_index++;
+    }
+}
+if(isset($_POST['knop_min']))
+{
+    if ($vraag_index > 1) 
+    {
+        $vraag_index--;
+    }
+}
+$_SESSION['vraag_index_mem'] = $vraag_index;
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,17 +43,51 @@
 
 <body>
     <?php require 'inc/nav.php'; ?>
-    <?php include 'functions/functions.php'; ?>
-    <div class="container-question">
-        <h1 class="question-count"> Vraag 1/10 </h1>
-        <h2 class="dummy">Hoe oud ben je?</h2>
-        <form action="quiz_questions.php" method="POST">
-            <div class="elements">
-            <input type="number" id="answer" class="answer">
-            </div>
-            <input type="button" name="answer" value="Volgende vraag" class="btnSubmitQuestion">
-        </form>
-    </div>
+
+    <?php 
+
+        laat_vraag_zien($antwoord_array[$vraag_index][0]);
+
+        if (isset($_GET[$antwoord_array[$vraag_index][0]])) 
+        {
+            $antwoord_array[$vraag_index][1] = $_GET[$antwoord_array[$vraag_index][0]];
+            echo '<br> index '. $vraag_index .' ---- <br>';
+            echo '<br> vraag '. $_GET[$antwoord_array[$vraag_index][0]] .' ---- <br>';
+            
+            $antwoord_1 = $antwoord_array[1][1];
+            $antwoord_2 = $antwoord_array[2][1];
+            $antwoord_3 = $antwoord_array[3][1];
+            $antwoord_4 = $antwoord_array[4][1];
+            $antwoord_5 = $antwoord_array[5][1];
+            $antwoord_6 = $antwoord_array[6][1];
+            $antwoord_7 = $antwoord_array[7][1];
+            $antwoord_8 = $antwoord_array[8][1];
+            $antwoord_9 = $antwoord_array[9][1];
+
+            $_SESSION['antwoord1'] = $antwoord_1; 
+            $_SESSION['antwoord2'] = $antwoord_2;
+            $_SESSION['antwoord3'] = $antwoord_3;
+            $_SESSION['antwoord4'] = $antwoord_4;
+            $_SESSION['antwoord5'] = $antwoord_5;
+            $_SESSION['antwoord6'] = $antwoord_6;
+            $_SESSION['antwoord7'] = $antwoord_7;
+            $_SESSION['antwoord8'] = $antwoord_8;
+            $_SESSION['antwoord9'] = $antwoord_9;
+        }
+
+    /* dit is een cheetsheet van de waardes
+    echo $antwoord_array[1][0] . '  ' . $antwoord_array[1][1] . '<br>' ;
+    echo $antwoord_array[2][0] . '  ' . $antwoord_array[2][1] . '<br>' ;
+    echo $antwoord_array[3][0] . '  ' . $antwoord_array[3][1] . '<br>' ;
+    echo $antwoord_array[4][0] . '  ' . $antwoord_array[4][1] . '<br>' ;
+    echo $antwoord_array[5][0] . '  ' . $antwoord_array[5][1] . '<br>' ;
+    echo $antwoord_array[6][0] . '  ' . $antwoord_array[6][1] . '<br>' ;
+    echo $antwoord_array[7][0] . '  ' . $antwoord_array[7][1] . '<br>' ;
+    echo $antwoord_array[8][0] . '  ' . $antwoord_array[8][1] . '<br>' ;
+    echo $antwoord_array[9][0] . '  ' . $antwoord_array[9][1] . '<br>' ;
+    */
+    ?>
+    
     <?php require 'inc/footer.php'; ?>
 </body>
 
