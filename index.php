@@ -12,6 +12,7 @@ print_r($_SESSION);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
     <script src="js/script_home.js" defer></script>
     <title>Home</title>
 </head>
@@ -21,7 +22,7 @@ print_r($_SESSION);
 
     <div class="start-quiz-container">
         <h1>Stichting Leergeld</h1>
-        <article>Doe nu mee aan onze quiz door op de knop the klikken!</article>
+        <article class="homeInfo">Doe nu mee aan onze quiz door op de knop the klikken!</article>
         <a href="quiz.php">Start Quiz</a>
     </div>
     <div id="pageJump"></div> 
@@ -61,21 +62,21 @@ print_r($_SESSION);
         uitgegroeid tot een landelijke stichting met een groot aantal vestigingen.
     </article>
     <?php
-        
-        if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['telephone_number']) && isset($_POST['email']) && isset($_POST['user_message']))
-        {
-            $fname = $_POST['firstname'];
-            $lname = $_POST['lastname'];
-            $phone = $_POST['telephone_number'];
-            $email = $_POST['email'];
-            $message = $_POST['user_message'];
 
-            insert_form($fname, $lname, $phone, $email, $message);
-        }
-    ?>
+if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['telephone_number']) && isset($_POST['email']) && isset($_POST['user_message'])) {
+    $fname = $_POST['firstname'];
+    $lname = $_POST['lastname'];
+    $phone = $_POST['telephone_number'];
+    $email = $_POST['email'];
+    $message = $_POST['user_message'];
+
+    insert_form($fname, $lname, $phone, $email, $message);
+}
+?>
     <div class="contact-container">
         <form id="contact-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> <!-- get filepath of file -->
-        <?php get_contact_info(); ?>
+        <?php get_contact_info(); ?>    
+            <h3>Vul het contactformulier hier in als u nog vragen heeft!</h3>
             <label for="fname">Voornaam</label>
             <input type="text" id="fname" name="firstname" placeholder="Jan" required />
             <!-- form will not post if empty field -->
