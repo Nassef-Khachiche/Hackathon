@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
     <script src="js/script_home.js" defer></script>
     <title>Home</title>
 </head>
@@ -15,7 +16,7 @@
     <?php include 'functions/functions.php'; ?>
     <div class="start-quiz-container">
         <h1>Stichting Leergeld</h1>
-        <article>Doe nu mee aan onze quiz door op de knop the klikken!</article>
+        <article class="homeInfo">Doe nu mee aan onze quiz door op de knop the klikken!</article>
         <a href="quiz.php">Start Quiz</a>
     </div>
     <div id="pageJump"></div> 
