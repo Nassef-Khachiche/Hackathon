@@ -2,6 +2,7 @@ const volgendeVraag = document.querySelector('.btnSubmitQuestion');
 const vraag = document.querySelector('.question-count');
 const nextQuestion = document.querySelector('.dummy');
 const emptyDiv = document.querySelector('.elements');
+const buttonEnd = document.querySelector('.buttonEnd');
 
 let answer = document.querySelectorAll('answer');
 let answerList = [];
@@ -22,7 +23,7 @@ const number = '<input type="number" id="answer" class="answer">'
 const radio = '<input type="radio" name="radio" id="answer" class="answer" value="Ja"><label class="label" for"radio">Ja </label> <input type="radio" name="radio" id="answer" class="answer" value="Nee"> <label for"radio">Nee </label> <input type="radio" name="radio" id="answer" class="answer" value="Soms"><label for"radio">Soms</label> <input type="radio" name="radio" id="answer" class="answer" value="Niet"> <label for"radio">Antwoord ik liever niet </label>'
 
 volgendeVraag.addEventListener('click', function () {
-    if (vragenAantal != 10) {
+    if (vragenAantal != 11) {
         switch (vragenAantal) {
             case 1:
                 emptyDiv.innerHTML = radio;
@@ -64,9 +65,13 @@ volgendeVraag.addEventListener('click', function () {
         answerList.push(answer[answerIndex]);
         answerIndex++;
         console.log(answerList);
-
-        if (vragenAantal == 11) {
-            window.location = "einde.php";
-        }
+        loadEndPage();
     }
 })
+
+function loadEndPage() {
+    if (vragenAantal == 11) {
+        vraag.textContent = 'Vraag 10/10';
+        window.location = "einde.php";
+    }
+}
