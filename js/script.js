@@ -17,7 +17,7 @@ const questions = ["Ga je vaak op schoolreis?",
 ];
 
 const number = '<input type="number" id="answer" class="answer">'
-const radio = '<input type="radio" name="radio" id="answer" class="answer" value="Ja"><label for"radio">Ja </label> <input type="radio" name="radio" id="answer" class="answer" value="Nee"> <label for"radio">Nee </label> <input type="radio" name="radio" id="answer" class="answer" value="Soms"><label for"radio">Soms</label> <input type="radio" name="radio" id="answer" class="answer" value="Niet"> <label for"radio">Antwoord ik liever niet </label>'
+const radio = '<input type="radio" name="radio" id="answer" class="answer" value="Ja">  <input type="radio" name="radio" id="answer" class="answer" value="Nee"> <label for"radio">Nee </label> <input type="radio" name="radio" id="answer" class="answer" value="Soms"><label for"radio">Soms</label> <input type="radio" name="radio" id="answer" class="answer" value="Niet"> <label for"radio">Antwoord ik liever niet </label>'
 
 volgendeVraag.addEventListener('click', function () {
     if (vragenAantal != 10) {
