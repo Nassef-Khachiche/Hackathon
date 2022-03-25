@@ -1,43 +1,48 @@
 <?php
-class User {
+class User
+{
 
-    public function __construct($username) {
-      $this->name = $username;
+    public function __construct($username)
+    {
+        $this->name = $username;
     }
 
-    public function get_username() {
+    public function get_username()
+    {
         return $this->username;
     }
 }
 
 session_start();
 
-if 
-(  
-    isset($_SESSION['antwoord_1']) && 
-    isset($_SESSION['antwoord_2']) && 
-    isset($_SESSION['antwoord_3']) && 
-    isset($_SESSION['antwoord_4']) && 
-    isset($_SESSION['antwoord_5']) && 
-    isset($_SESSION['antwoord_6']) && 
-    isset($_SESSION['antwoord_7']) && 
-    isset($_SESSION['antwoord_8']) && 
-    isset($_SESSION['antwoord_9']) && 
-    isset($_SESSION['antwoord_10']) 
-)
-{
-    $antwoord_array = array (
+if
 
-        1  => array("vraag_1" , $_SESSION['antwoord_1'] ),
-        2  => array("vraag_2" , $_SESSION['antwoord_2'] ),
-        3  => array("vraag_3" , $_SESSION['antwoord_3'] ),
-        4  => array("vraag_4" , $_SESSION['antwoord_4'] ),
-        5  => array("vraag_5" , $_SESSION['antwoord_5'] ),
-        6  => array("vraag_6" , $_SESSION['antwoord_6'] ),
-        7  => array("vraag_7" , $_SESSION['antwoord_7'] ),
-        8  => array("vraag_8" , $_SESSION['antwoord_8'] ),
-        9  => array("vraag_9" , $_SESSION['antwoord_9'] ),
-        10 => array("vraag_10" , $_SESSION['antwoord_10'] )
+(
+isset($_SESSION['antwoord_1']) &&
+isset($_SESSION['antwoord_2']) &&
+isset($_SESSION['antwoord_3']) &&
+isset($_SESSION['antwoord_4']) &&
+isset($_SESSION['antwoord_5']) &&
+isset($_SESSION['antwoord_6']) &&
+isset($_SESSION['antwoord_7']) &&
+isset($_SESSION['antwoord_8']) &&
+isset($_SESSION['antwoord_9']) &&
+isset($_SESSION['antwoord_10'])
+
+) 
+{
+    $antwoord_array = array(
+
+        1 => array("vraag_1", $_SESSION['antwoord_1']),
+        2 => array("vraag_2", $_SESSION['antwoord_2']),
+        3 => array("vraag_3", $_SESSION['antwoord_3']),
+        4 => array("vraag_4", $_SESSION['antwoord_4']),
+        5 => array("vraag_5", $_SESSION['antwoord_5']),
+        6 => array("vraag_6", $_SESSION['antwoord_6']),
+        7 => array("vraag_7", $_SESSION['antwoord_7']),
+        8 => array("vraag_8", $_SESSION['antwoord_8']),
+        9 => array("vraag_9", $_SESSION['antwoord_9']),
+        10 => array("vraag_10", $_SESSION['antwoord_10'])
     );
     $antwoord__1 = $_SESSION['antwoord_1'];
     $antwoord__2 = $_SESSION['antwoord_2'];
@@ -50,20 +55,20 @@ if
     $antwoord__9 = $_SESSION['antwoord_9'];
     $antwoord__10 = $_SESSION['antwoord_10'];
 }
-else
+else 
 {
-    $antwoord_array = array (
+    $antwoord_array = array(
 
-        1 => array( 1, 0 ),
-        2 => array( 2, 0 ),
-        3 => array( 3, 0 ),
-        4 => array( 4, 0 ),
-        5 => array( 5, 0 ),
-        6 => array( 6, 0 ),
-        7 => array( 7, 0 ),
-        8 => array( 8, 0 ),
-        9 => array( 9, 0 ),
-        9 => array( 9, 0 )
+        1 => array(1, 0),
+        2 => array(2, 0),
+        3 => array(3, 0),
+        4 => array(4, 0),
+        5 => array(5, 0),
+        6 => array(6, 0),
+        7 => array(7, 0),
+        8 => array(8, 0),
+        9 => array(9, 0),
+        9 => array(9, 0)
     );
     $antwoord__1 = 0;
     $antwoord__2 = 0;
@@ -84,14 +89,15 @@ function db()
     $username = "root";
     $password = "";
     $db = "leergeld";
-    
+
     // create connection
     $cn = new mysqli($servername, $username, $password, $db);
-    
+
     return $cn;
 }
 
-function get_contact_info() {
+function get_contact_info()
+{
     // db conn
     $conn = db();
 
@@ -108,13 +114,14 @@ function get_contact_info() {
     $rnum = $stmt->num_rows();
 
     // if there aren't any logins set yet or if it is not the same login only then it will store everything in the database
-    if ($rnum == 0) {     
+    if ($rnum == 0) {
         $stmt->close();
         $stmt = $conn->prepare($INSERT);
         $stmt->bind_param("sssis", $firstname, $lastname, $email, $telephone_number, $user_message);
         $stmt->execute();
-        // echo "A new record has been inserted succesfully.<br>";
-    } else {
+    // echo "A new record has been inserted succesfully.<br>";
+    }
+    else {
         # Error warning
         echo "These are already in use try to use something else.";
     }
@@ -144,19 +151,18 @@ function get_question($question_id)
 function insert_form($fname, $lname, $phone, $email, $message)
 {
     $conn = db();
-    
+
     $sql = "INSERT INTO contact_form (`contact_form_fname`,`contact_form_sname`, `contact_form_phone` ,`contact_form_email`,`contact_form_messige`)
-    VALUES ( '". $fname ."', '". $lname ."', '". $phone ."', '". $email ."', '". $message ."')";
-    
-    if ($conn->query($sql) == TRUE) 
-    {
+    VALUES ( '" . $fname . "', '" . $lname . "', '" . $phone . "', '" . $email . "', '" . $message . "')";
+
+    if ($conn->query($sql) == TRUE) {
         echo "New record created successfully";
-    } 
-    else 
-    {
+    }
+    else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    
+
+
 }
 
 
@@ -169,40 +175,39 @@ function laat_vraag_zien($vraag_id)
     $sql = "SELECT * FROM `question` WHERE `question_id` = " . $vraag_id; // sql question
     $result = $cn->query($sql);
 
-    if ($result->num_rows > 0) 
-    {
+    if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) // create assoc array and put result in
         {
 
             $question = $row['question_id'] . ": " . $row['question'] . "<br>";
-                
-            if ($vraag_id == 1 ||$vraag_id == 7 ) 
-            {
-                echo 
-                '
+
+            if ($vraag_id == 1 || $vraag_id == 7) {
+                echo
+                    '
                     <form method="get" action="quiz_questions.php">
                         <br><br>
-                        Vraag'. $row['question_id'] .'/10 
-                        <br><br> '. $row['question'] .' <br><br>
+                        Vraag' . $row['question_id'] . '/10 
+                        <br><br> ' . $row['question'] . ' <br><br>
                         <input type="number" name="' . $vraag_id . '">
                         <br><br>
+                        <div class="buttons-quiz">
                         <input type="Submit">
                     </form> 
                     <form method="post">
-                        <input type="submit" name="knop_min" />
-                        <input type="submit" name="knop_plus" />
+                        <input type="submit" name="knop_min" value= "vorige vraag"/>
+                        <input type="submit" name="knop_plus" value="volgende vraag" />
                     </form>
+                    </div>
                 ';
-            }    
-            if ($vraag_id != 1 &&  $vraag_id != 5 && $vraag_id != 6 && $vraag_id != 7  &&  $vraag_id != 10) 
-            {
+            }
+            if ($vraag_id != 1 && $vraag_id != 5 && $vraag_id != 6 && $vraag_id != 7 && $vraag_id != 10) {
                 echo
                     '
                     <form method="get" action="quiz_questions.php">
                         <div>
                             <br><br>
-                            Vraag'. $row['question_id'] .'/10 
-                            <br><br> '. $row['question'] .' <br><br>
+                            Vraag' . $row['question_id'] . '/10 
+                            <br><br> ' . $row['question'] . ' <br><br>
                             <input type="radio" id="A" name="' . $vraag_id . '" value="1">
                             <label for="A">ja</label><br>
                     
@@ -215,24 +220,25 @@ function laat_vraag_zien($vraag_id)
                             <input type="radio" id="D" name="' . $vraag_id . '" value="4">
                             <label for="D">beantwoord ik liever niet</label><br>
                         </div>
+                        <div class="buttons-quiz">
                         <input type="Submit" value="dit is mijn antwoord">
                     </form> 
                     <form method="post">
                         <input type="submit" name="knop_min" value="vorige vraag" />
-                        <input type="submit" name="knop_plus" value="vlogende vraag" />
+                        <input type="submit" name="knop_plus" value="volgende vraag" />
                     </form>
+                    </div>
                     <br><br>
                     ';
             }
-            if ($vraag_id == 5 || $vraag_id == 6) 
-            {
+            if ($vraag_id == 5 || $vraag_id == 6) {
                 echo
                     '
                     <form method="get" action="quiz_questions.php">
                         <div>
                             <br><br>
-                            Vraag'. $row['question_id'] .'/10 
-                            <br><br> '. $row['question'] .' <br><br>
+                            Vraag' . $row['question_id'] . '/10 
+                            <br><br> ' . $row['question'] . ' <br><br>
                             <input type="radio" id="A" name="' . $vraag_id . '" value="1">
                             <label for="A">ja</label><br>
                     
@@ -242,22 +248,24 @@ function laat_vraag_zien($vraag_id)
                             <input type="radio" id="D" name="' . $vraag_id . '" value="4">
                             <label for="D">beantwoord ik liever niet</label><br>
                         </div>
+                        <div class="buttons-quiz">
                         <input type="Submit" value="dit is mijn antwoord">
                     </form> 
                     <form method="post">
                         <input type="submit" name="knop_min" value="vorige vraag" />
-                        <input type="submit" name="knop_plus" value="vlogende vraag" />
+                        <input type="submit" name="knop_plus" value="volgende vraag" />
                     </form>
+                    </div>
                     <br><br>
                     ';
             }
-            if ($vraag_id == 10) 
-            {
-                echo 
-                '
+            if ($vraag_id == 10) {
+                echo
+                    '
                 <form method="get" action="quiz_questions.php">
                 <br><br>
                 <form action="" method="post">
+                <div class="buttons-quiz">
                     <input type="submit" name="stuur_vraag" />
                 </form>
 
@@ -268,13 +276,13 @@ function laat_vraag_zien($vraag_id)
                     <input type="submit" name="knop_min" />
                     <input type="submit" name="knop_plus" />
                 </form>
+                </div>
                 ';
-            }    
-            if ($vraag_id < 1 || $vraag_id > 11) 
-            {
+            }
+            if ($vraag_id < 1 || $vraag_id > 11) {
                 echo 'error';
             }
-                    
+
         }
     }
 
@@ -286,9 +294,11 @@ function laat_vraag_zien($vraag_id)
 // function insert_antwoord_s($antwoord_s = [])
 // {
 //     $conn = db();
-    
+
+
 //     $sql = "INSERT INTO antwoord_ (`antwoord_`) VALUES ( '". $antwoord_s ."')";
-    
+
+
 //     if ($conn->query($sql) == TRUE)
 //     {
 //         echo "New record created successfully";

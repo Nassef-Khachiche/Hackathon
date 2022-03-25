@@ -14,7 +14,7 @@ body{
     justify-content: flex-end;
     flex-direction: column;
     height: 100%;
-    transform: translateY(10%);
+    transform: translateY(4%);
     width: 100vw;
 }
 .img-div{
@@ -35,6 +35,7 @@ body{
     font-size: 41px;
     border-radius: 49px;
     text-decoration: none;
+    transform: translateY(-45%)
 }
 
 .btnSubmitQuestion{
@@ -94,7 +95,7 @@ body{
 }
 
 .main-footer{
-    bottom: -20vh;
+    bottom: 0vh;
 }
 
 .end-container{
@@ -110,5 +111,10 @@ body{
     font-size: 55px;
 }
 
+.buttons-quiz{
+    transform: translateY(50%) !important;
+}
 
-
+.buttons-quiz input{
+    margin: 10px;
+}
